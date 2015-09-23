@@ -36,6 +36,24 @@
     <ServiceConfiguration Include="ServiceConfiguration.Local.cscfg" />
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sandbox\Sandbox.csproj">
+      <Name>Sandbox</Name>
+      <Project>{72b2e2b4-388e-4976-8776-7c7be52308d2}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>Sandbox</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SandboxContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SandboxContent\diagnostics.wadcfg">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
